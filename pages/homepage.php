@@ -52,16 +52,30 @@
                 <input class="form-control" type="text" placeholder="Enter Username" name="uname" id="uname" required><br>
                 <label for="Password"><span class="FieldInfo">Password:</span></label>
                 <input class="form-control" type="password" placeholder="Enter Password" name="psw" id="psw" required>
+                
             </div>
-            <br>
-            <div class="col-sm-offset-4 col-sm-4">
+    
+            <div class="col-sm-offset-4">
             <input class="btn btn-success" type="submit" name="submit" value="Sign in">
             </div>
         </div>
         </div>
     </div>
 </div>
-            </form>
+</form>
+
+
+<div class="container-fluid">
+    <div class="col-sm-offset-4 col-sm-4">
+        <div>
+            <form action="index.php?page=accounts&action=signup" method="POST">
+                <div class="form-group col-sm-offset-2">
+                  <label for="no account"><span class="FieldInfo">Don't have a account?</span></label><a href="index.php?page=accounts&action=signup"> Register </a>
+              </div>
+        </div>
+    </div>
+</div>
+</form>
 <script src="js/scripts.js"></script>
 </body>
 </html>
