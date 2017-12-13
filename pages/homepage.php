@@ -16,9 +16,11 @@
     <![endif]-->
 </head>
 
-<body>
+<body class="bg-success">
+
+<form action="index.php?page=accounts&action=signup" method="POST">
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+  <div class="container-fluid"> 
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Final Project</a>
     </div>
@@ -31,6 +33,7 @@
     </ul>
   </div>
   </nav>
+</form>
 <h1>
     <?php
 
@@ -41,12 +44,12 @@
 
 <h1><a href="index.php?page=accounts&action=all">Show All Accounts</a></h1>
 <h1><a href="index.php?page=tasks&action=all">Show All Tasks</a></h1>
-
+<form action="index.php?page=accounts&action=login" method="POST">
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-offset-4 col-sm-4">
         <div>
-            <form action="index.php?page=accounts&action=login" method="POST">
+            
             <div class="form-group">
                 <label for="Username"><span class="FieldInfo">UserName:</span></label>
                 <input class="form-control" type="text" placeholder="Enter Username" name="uname" id="uname" required><br>
@@ -76,6 +79,9 @@
     </div>
 </div>
 </form>
+
 <script src="js/scripts.js"></script>
+
 </body>
+
 </html>
