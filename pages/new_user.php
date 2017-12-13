@@ -16,7 +16,7 @@
 </head>
 
 <body>
-
+   
   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -36,7 +36,7 @@
 //this is how you print something
 //print utility\htmlTable::genarateTableFromMultiArray($data);
 ?>
-
+<form action="index.php?page=accounts&action=register" method="POST">
 <div class="container-fluid">
 	<div class="col-sm-offset-5">
   <h3>Registration</h3>
@@ -45,7 +45,7 @@
 	<div class="row">
 		<div class="col-sm-offset-4 col-sm-4">
 			<div>
-				<form action="index.php?page=accounts&action=register" method="POST">
+				
 					<div class= "form-group">
 						<label for ="Email"><span class="FieldInfo">Email:</span></label>
                         <input class="form-control" type="text" placeholder="Enter Email" name="email" required>
@@ -66,11 +66,11 @@
                         <input class="form-control" type="text" placeholder="Enter Gender" name="gender" required>
 
                         <label for ="Password"><span class="FieldInfo">Password:</span></label>
-                        <input class="form-control" type="text" placeholder="Enter Password" name="password" required>
+                        <input class="form-control" type="password" placeholder="Enter Password" name="password" required>
 					</div>
 					
 					<div class="col-sm-offset-4">
-                    <input class="btn btn-success" type="submit" name="submit" value="Register">
+                    <input class="btn btn-success" type="submit" name="submit" value="Register"><a href="index.php">Cancel</a>
                     </div>
 			</div>
 		</div>
