@@ -124,13 +124,13 @@ class routes
         $route->method = 'signup';
         $routes[] = $route;
 
-        $route = new route();
+        /*$route = new route();
         $route->http_method = 'GET';
         $route->action = 'register';
         $route->page = 'accounts';
         $route->controller = 'accountsController';
         $route->method = 'register';
-        $routes[] = $route;
+        $routes[] = $route;*/
 
         //this handles the reg post to create the user
         $route = new route();
@@ -138,14 +138,11 @@ class routes
         $route->action = 'register';
         $route->page = 'accounts';
         $route->controller = 'accountsController';
-        $route->method = 'store';
+        $route->method = 'register';
         $routes[] = $route;
         return $routes;
 
-
         //YOU WILL NEED TO ADD MORE ROUTES
-
-        
 
         $route = new route();
         $route->http_method = 'POST';
