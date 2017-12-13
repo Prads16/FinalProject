@@ -51,7 +51,7 @@ class accountsController extends http\controller
             //You can make a template for errors called error.php
             // and load the template here with the error you want to show.
            // echo 'already registered';
-            $error = 'already registered';
+            $error = 'Email already registered';
             self::getTemplate('error', $error);
         }
     }
@@ -96,9 +96,15 @@ class accountsController extends http\controller
                 $_SESSION["userID"] = $user->id;
                 //forward the user to the show all todos page
                 print_r($_SESSION);
+                header('Location: index.php?page=tasks&action=allOneUser&id='.$user->id);
             } else {
                 echo 'password does not match';
             }
         }
+    }
+    public static function logout()
+    {
+        session_destroy();
+        header('Location: index.php');
     }
 }
