@@ -15,6 +15,12 @@ class accountsController extends http\controller
         $records = accounts::findAll();
         self::getTemplate('all_accounts', $records);
     }
+
+    public static function allOneUser()
+    {
+        $records = accounts::findUserbyEmail($_REQUEST['email']);
+        self::getTemplate('all_accounts', $records);
+    }
     //to call the show function the url is called with a post to: index.php?page=task&action=create
     //this is a function to create new tasks
     //you should check the notes on the project posted in moodle for how to use active record here
