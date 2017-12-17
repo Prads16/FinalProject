@@ -70,7 +70,7 @@
 					</div>
 					
 					<div class="col-sm-offset-0">
-                    <input class="btn btn-success pull-left" type="submit" name="submit" value="Add Task" >
+                    <input class="btn btn-success pull-left" type="submit" name="addtask" value="Add Task" >
                     </div>
                   </form>
                     <div>
