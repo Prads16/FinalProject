@@ -6,14 +6,11 @@ class todos extends database\collection
     //Don't forget to return the record set see findAll in the collection class
     public static  function findTasksbyID($userid) {
         $tableName = get_called_class();
-        $sql = 'SELECT * FROM ' . $tableName . ' WHERE ownerid = ?';
+         $sql = 'SELECT * FROM ' . $tableName . ' WHERE ownerid ="' . $userid.'"';
+        //echo $sql;
         //grab the only record for find one and return as an object
-        $recordsSet = self::getResults($sql, $userid);
-        if (is_null($recordsSet)) {
-            return FALSE;
-        } else {
-            return $recordsSet;
-        }
+        $recordsSet = self::getResults($sql);
+        return $recordsSet;
     }
 }
 ?>
