@@ -41,7 +41,20 @@ class tasksController extends http\controller
     }
     public static function create()
     {
-        print_r($_POST);
+        self::getTemplate('new_tasks');
+    }
+    public static function addTask()
+    {
+        session_start();
+        $record = new todo();
+        $record->owneremail = $_SESSION["userEmail"];
+        $record->ownerid = $_SESSION["userID"];
+        $record->createddate = $_POST['createddate'];
+        $record->duedate = $_POST['duedate'];
+        $record->message = $_POST['message'];
+        $record->isdone = $_POST['isdone'];
+        $record->save();
+        header('Location: index.php?page=tasks&action=oneUser&id='.$_SESSION["userID"]);
     }
     //this is the function to view edit record form
     public static function edit()
