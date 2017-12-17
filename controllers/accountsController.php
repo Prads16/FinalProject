@@ -35,7 +35,8 @@ class accountsController extends http\controller
     public static function store()
     {
         $user = accounts::findUserbyEmail($_REQUEST['email']);
-        if ($user == FALSE) {
+        if ($user == FALSE) 
+        {
             $user = new account();
             $user->email = $_POST['email'];
             $user->fname = $_POST['fname'];
@@ -53,7 +54,9 @@ class accountsController extends http\controller
             // login page or create a session and log them in
             // and then send them to the task list page and a link to create tasks
             header("Location: index.php?page=accounts&action=all");
-        } else {
+        } 
+        else 
+        {
             //You can make a template for errors called error.php
             // and load the template here with the error you want to show.
            // echo 'already registered';
@@ -67,7 +70,8 @@ class accountsController extends http\controller
         self::getTemplate('edit_account', $record);
     }
 //this is used to save the update form data
-    public static function save() {
+    public static function save() 
+    {
         $user = accounts::findOne($_REQUEST['id']);
         $user->email = $_POST['email'];
         $user->fname = $_POST['fname'];
@@ -78,7 +82,8 @@ class accountsController extends http\controller
         $user->save();
         header("Location: index.php?page=accounts&action=all");
     }
-    public static function delete() {
+    public static function delete() 
+    {
         $record = accounts::findOne($_REQUEST['id']);
         $record->delete();
         header("Location: index.php?page=accounts&action=all");
@@ -93,16 +98,24 @@ class accountsController extends http\controller
         //after you login you can use the header function to forward the user to a page that displays their tasks.
         //        $record = accounts::findUser($_POST['email']);
         $user = accounts::findUserbyEmail($_REQUEST['email']);
-        if ($user == FALSE) {
+        if ($user == FALSE) 
+        {
             echo 'user not found';
-        } else {
-            if($user->checkPassword($_POST['password']) == TRUE) {
-                echo 'login';
+        } 
+        else 
+        {
+            if($user->checkPassword($_POST['password']) == TRUE) 
+            {
+               // echo 'login';
                 session_start();
                 $_SESSION["userID"] = $user->id;
+                $_SESSION["userEmail"] = $user->email;
                 //forward the user to the show all todos page
-                print_r($_SESSION);
-            } else {
+                //print_r($_SESSION);
+                header('Location: index.php?page=tasks&action=oneUser&id='.$user->id);
+            } 
+            else 
+            {
                 echo 'password does not match';
             }
         }
