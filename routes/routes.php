@@ -58,7 +58,22 @@ class routes
         $route->method = 'delete';
         $routes[] = $route;
 
-        
+        $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'create';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'create';
+        $routes[] = $route;
+
+        $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'addTask';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'addTask';
+        $routes[] = $route;
+
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'all';
@@ -114,7 +129,7 @@ class routes
         $route->controller = 'accountsController';
         $route->method = 'register';
         $routes[] = $route;
-
+        
         $route = new route();
         $route->http_method = 'POST';
         $route->action = 'register';
@@ -122,9 +137,7 @@ class routes
         $route->controller = 'accountsController';
         $route->method = 'store';
         $routes[] = $route;
-
         return $routes;
-
        
     }
     public static function create($http_method,$action,$page,$controller,$method) {
