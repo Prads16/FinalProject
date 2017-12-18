@@ -1,59 +1,60 @@
 <?php
-
 namespace utility;
 //namespace MyProject\mvcName;
-
 class htmlTable
 {
     public static function genarateTableFromMultiArray($array)
     {
-
-        $tableGen = '<table border="1"cellpadding="10">';
-        $tableGen .= '<tr>';
+        $tableGen = '<table class="table-hover align-items-center table table-bordered">';
+        $tableGen .= '<tr class="active">';
         //this grabs the first element of the array so we can extract the field headings for the table
         $fieldHeadings = $array[0];
         $fieldHeadings = get_object_vars($fieldHeadings);
         $fieldHeadings = array_keys($fieldHeadings);
         //this gets the page being viewed so that the table routes requests to the correct controller
         $referingPage = $_REQUEST['page'];
-        foreach ($fieldHeadings as $heading) {
+        foreach ($fieldHeadings as $heading) 
+        {
             $tableGen .= '<th>' . $heading . '</th>';
         }
         $tableGen .= '</tr>';
-        foreach ($array as $record) {
-            $tableGen .= '<tr>';
-            foreach ($record as $key => $value) {
-                if ($key == 'id') {
+        foreach ($array as $record) 
+        {
+            $tableGen .= '<tr class="active">';
+            foreach ($record as $key => $value) 
+            {
+                if ($key == 'id') 
+                {
                     $tableGen .= '<td><a href="index.php?page=' . $referingPage . '&action=show&id=' . $value . '">View</a></td>';
-                } else {
+                } 
+                else 
+                {
                     $tableGen .= '<td>' . $value . '</td>';
                 }
             }
+             
             $tableGen .= '</tr>';
         }
-
         $tableGen .= '</table>';
-
         return $tableGen;
     }
-
     public static function generateTableFromOneRecord($innerArray)
     {
-        $tableGen = '<table border="1" cellpadding="10"><tr>';
-
+        $tableGen = '<table class="table-hover align-items-center table table-bordered"><tr>';
         $tableGen .= '<tr>';
-        foreach ($innerArray as $innerRow => $value) {
+        foreach ($innerArray as $innerRow => $value) 
+        {
             $tableGen .= '<th>' . $innerRow . '</th>';
         }
         $tableGen .= '</tr>';
-
-        foreach ($innerArray as $value) {
+        foreach ($innerArray as $value) 
+        {
             $tableGen .= '<td>' . $value . '</td>';
         }
-
         $tableGen .= '</tr></table><hr>';
         return $tableGen;
     }
-}
 
+   
+}
 ?>
