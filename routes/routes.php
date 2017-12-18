@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kwilliams
- * Date: 11/27/17
- * Time: 5:25 PM
- */
+
 class routes
 {
     public static function getRoutes()
@@ -25,46 +20,6 @@ class routes
         $route->controller = 'homepageController';
         $route->method = 'create';
         $routes[] = $route;
-       
-        $route = new route();
-        $route->http_method = 'GET';
-        $route->action = 'show';
-        $route->page = 'tasks';
-        $route->controller = 'tasksController';
-        $route->method = 'show';
-        $routes[] = $route;
-       
-        $route = new route();
-        $route->http_method = 'GET';
-        $route->action = 'all';
-        $route->page = 'tasks';
-        $route->controller = 'tasksController';
-        $route->method = 'all';
-        $routes[] = $route;
-
-        $route = new route();
-        $route->http_method = 'GET';
-        $route->action = 'oneUser';
-        $route->page = 'tasks';
-        $route->controller = 'tasksController';
-        $route->method = 'oneUser';
-        $routes[] = $route;
-
-        $route = new route();
-        $route->http_method = 'POST';
-        $route->action = 'delete';
-        $route->page = 'tasks';
-        $route->controller = 'tasksController';
-        $route->method = 'delete';
-        $routes[] = $route;
-
-        $route = new route();
-        $route->http_method = 'POST';
-        $route->action = 'create';
-        $route->page = 'tasks';
-        $route->controller = 'tasksController';
-        $route->method = 'create';
-        $routes[] = $route;
 
         $route = new route();
         $route->http_method = 'POST';
@@ -75,13 +30,77 @@ class routes
         $routes[] = $route;
 
         $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'create';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'create';
+        $routes[] = $route;
+      
+        $route = new route();
+        $route->http_method = 'GET';
+        $route->action = 'show';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'show';
+        $routes[] = $route;
+       
+        $route = new route();
+        $route->http_method = 'GET';
+        $route->action = 'all';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'all';
+        $routes[] = $route;
+      
+        $route = new route();
+        $route->http_method = 'GET';
+        $route->action = 'oneUser';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'oneUser';
+        $routes[] = $route;
+     
+        $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'delete';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'delete';
+        $routes[] = $route;
+      
+        $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'edit';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'editTask';
+        $routes[] = $route;
+      
+        $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'update';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'update';
+        $routes[] = $route;
+
+        $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'signup';
+        $route->page = 'accounts';
+        $route->controller = 'accountsController';
+        $route->method = 'signup';
+        $routes[] = $route;
+       
+        $route = new route();
         $route->http_method = 'GET';
         $route->action = 'all';
         $route->page = 'accounts';
         $route->controller = 'accountsController';
         $route->method = 'all';
         $routes[] = $route;
-       
+      
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'show';
@@ -89,7 +108,7 @@ class routes
         $route->controller = 'accountsController';
         $route->method = 'show';
         $routes[] = $route;
-      
+        
         $route = new route();
         $route->http_method = 'POST';
         $route->action = 'login';
@@ -97,7 +116,31 @@ class routes
         $route->controller = 'accountsController';
         $route->method = 'login';
         $routes[] = $route;
-      
+       
+        $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'logout';
+        $route->page = 'accounts';
+        $route->controller = 'accountsController';
+        $route->method = 'logout';
+        $routes[] = $route;
+       
+        $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'profile';
+        $route->page = 'accounts';
+        $route->controller = 'accountsController';
+        $route->method = 'showprofile';
+        $routes[] = $route;
+       
+        $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'update';
+        $route->page = 'accounts';
+        $route->controller = 'accountsController';
+        $route->method = 'updateprofile';
+        $routes[] = $route;
+       
         $route = new route();
         $route->http_method = 'POST';
         $route->action = 'delete';
@@ -107,21 +150,13 @@ class routes
         $routes[] = $route;
 
         $route = new route();
-        $route->http_method = 'GET';
-        $route->action = 'edit';
-        $route->page = 'accounts';
-        $route->controller = 'accountsController';
-        $route->method = 'edit';
-        $routes[] = $route;
-
-        $route = new route();
         $route->http_method = 'POST';
         $route->action = 'save';
         $route->page = 'accounts';
         $route->controller = 'accountsController';
         $route->method = 'save';
         $routes[] = $route;
-      
+       
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'register';
@@ -129,7 +164,7 @@ class routes
         $route->controller = 'accountsController';
         $route->method = 'register';
         $routes[] = $route;
-        
+    
         $route = new route();
         $route->http_method = 'POST';
         $route->action = 'register';
@@ -137,16 +172,10 @@ class routes
         $route->controller = 'accountsController';
         $route->method = 'store';
         $routes[] = $route;
+
         return $routes;
-       
-    }
-    public static function create($http_method,$action,$page,$controller,$method) {
-        $route = new route();
-        $route->http_method = $http_method;
-        $route->action = $action;
-        $route->page = $page;
-        $route->controller = $controller;
-        $route->method = $method;
+
+
     }
 }
 //this is the route prototype object  you would make a factory to return this
