@@ -1,33 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kwilliams
- * Date: 11/27/17
- * Time: 5:32 PM
- */
-//each page extends controller and the index.php?page=tasks causes the controller to be called
 class tasksController extends http\controller
 {
-    //each method in the controller is named an action.
-    //to call the show function the url is index.php?page=task&action=show
+    
     public static function show()
     {
         $record = todos::findOne($_REQUEST['id']);
         self::getTemplate('show_task', $record);
     }
-    //to call the show function the url is index.php?page=task&action=list_task
     public static function all()
     {
         $records = todos::findAll();
-        /*session_start();
-           if(key_exists('userID',$_SESSION)) {
-               $userID = $_SESSION['userID'];
-           } else {
-               echo 'you must be logged in to view tasks';
-           }
-        $userID = $_SESSION['userID'];
-        $records = todos::findTasksbyID($userID);
-        */
         self::getTemplate('all_tasks', $records);
     }
   
@@ -70,12 +52,17 @@ class tasksController extends http\controller
     public static function save() 
     {
         session_start();
-        $task = new todo();
-        $task->body = $_POST['body'];
+        $task = todos::findOne($_REQUEST['id']);
+        $task->owneremail = $_POST['owneremail'];
         $task->ownerid = $_SESSION['userID'];
+        $task->createddate = $_POST['createddate'];
+        $task->duedate = $_POST['duedate'];
+        $task->message = $_POST['message'];
+        $task->isdone = $_POST['isdone'];
         $task->save();
+        header('Location: index.php?page=tasks&action=oneUser&id='.$_SESSION["userID"]);
     }
-   
+
     public static function delete()
     {
         $record = todos::findOne($_REQUEST['id']);
@@ -84,17 +71,15 @@ class tasksController extends http\controller
         header('Location: index.php?page=tasks&action=oneUser&id='.$_SESSION["userID"]);
     }
 
-    public static function update()
+     public static function update()
     {
-        $records = todos::findOne($_REQUEST['id']);
-        $record = new todo();
-        $record->id=$records->id;
-        $record->owneremail=$_POST['owneremail'];
-        $record->ownerid=$_POST['ownerid'];
-        $record->createddate=$_POST['createddate'];
-        $record->duedate=$_POST['duedate'];
-        $record->message=$_POST['message'];
-        $record->isdone=$_POST['isdone'];
+        $record = todos::findOne($_REQUEST['id']);
+        $task->owneremail = $_POST['owneremail'];
+        $task->ownerid = $_SESSION['userID'];
+        $record->createddate = $_POST['createddate'];
+        $record->duedate = $_POST['duedate'];
+        $record->message = $_POST['message'];
+        $record->isdone = $_POST['isdone'];
         $record->save();
         session_start();
         header('Location: index.php?page=tasks&action=oneUser&id='.$_SESSION["userID"]);
