@@ -47,25 +47,25 @@
                 
                     <div class= "form-group">
                         <label for ="Email"><span class="FieldInfo">Email:</span></label>
-                        <input class="form-control" type="text" placeholder="Enter Email" name="email" required>
+                        <input class="form-control" type="email" placeholder="Enter Email" name="email" required>
 
                         <label for ="FirstName"><span class="FieldInfo">First Name:</span></label>
-                        <input class="form-control" type="text" placeholder="Enter First Name" name="fname" required>
+                        <input class="form-control" type="text" placeholder="Enter First Name" name="fname" minlength="1" required>
                         
                         <label for ="LastName"><span class="FieldInfo">Last Name:</span></label>
-                        <input class="form-control" type="text" placeholder="Enter Last Name" name="lname" required>
+                        <input class="form-control" type="text" placeholder="Enter Last Name" name="lname" minlength="1" required>
 
                         <label for ="PhoneNumber"><span class="FieldInfo">Phone No.:</span></label>
                         <input class="form-control" type="text" placeholder="Enter Phone number" name="phone" required>
 
                         <label for ="Birthday"><span class="FieldInfo">Birth Date:</span></label>
-                        <input class="form-control" type="text" placeholder="Enter Birth Date" name="bday" required>
+                        <input class="form-control" type="date" placeholder="Enter Birth Date" name="bday" required>
 
                         <label for ="Gender"><span class="FieldInfo">Gender:</span></label>
                         <input class="form-control" type="text" placeholder="Enter Gender" name="gender" required>
 
                         <label for ="Password"><span class="FieldInfo">Password:</span></label>
-                        <input class="form-control" type="password" placeholder="Enter Password" name="password" required>
+                        <input class="form-control" type="password" placeholder="Enter Password" name="password" minlength="6" required>
                     </div>
                     
                     <div class="col-sm-offset-4">
