@@ -48,7 +48,7 @@
 						<div>
 							<div class= "form-group">
 								<label for ="CreateDate"><span class="FieldInfo">Created Date:</span></label>
-								<input class="form-control" type="text" placeholder="Enter Created date" name="createddate">
+								<input class="form-control" type="text" placeholder="Enter created date" name="createddate">
 								<label for ="DueDate"><span class="FieldInfo">Due Date:</span></label>
 								<input class="form-control" type="text" placeholder="Enter Due Date" name="duedate">
 								
