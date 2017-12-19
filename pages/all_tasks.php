@@ -53,8 +53,6 @@
 			print utility\htmlTable::genarateTableFromMultiArray($data);
 			?>
 		</div>
-		
-		
 		<hr><br>
 		<!-- Modal -->
 	</div>
