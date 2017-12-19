@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>The HTML5 Herald</title>
+    <title>Show accounts</title>
     <meta name="description" content="The HTML5 Herald">
     <meta name="author" content="SitePoint">
 
@@ -40,7 +40,7 @@ print_r($data);
 </form>
 
 
-<form action="index.php?page=accounts&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
+<form action="index.php?page=accounts&action=delete&id=<?php echo $data->id; ?> " method="post">
     <button type="submit" form="form1" value="delete">Delete</button>
 </form>
 
