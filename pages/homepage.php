@@ -22,13 +22,16 @@
                     </div>
                 </div>
             </nav>
-            <h1><a href="index.php?page=accounts&action=all">Show All Accounts</a></h1>
-            <h1><a href="index.php?page=tasks&action=all">Show All Tasks</a></h1>
+           <div class = "container" style = "margin-top: 90px;">
+                 <h1 align="center"><a href="#">To-do Application Login</a></h1>
+                <div class = "row" style = "margin-top: 30px;">
+                </div><br>
+            </div>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-offset-4 col-sm-4">
                         <div class="form-group">
-                            <h1 align="center"><a href="#">To-do Application Login</a></h1>
+                           
                             <label for = "Username"><span class="FieldInfo">Username:</span></label>
                             <input class="form-control" type="text" placeholder="Enter Username" name="email" id="email" required>
                             <label for = "Password"><span class="FieldInfo">Password"</span></label>
